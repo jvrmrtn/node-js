@@ -1,0 +1,14 @@
+-const tituloWeb = 'Crear Mascota'
+-const titulo = 'PAGINA CREAR MASCOTAS'
+include templates/head.pug
+
+body
+    h1= titulo
+
+    form(action="/mascotas" method="POST").form
+        input(type="text", name="name", placeholder="Agregar nombre").form__input
+        input(type="text", name="description", placeholder="Agregar descripcion").form__input
+        button(type="submit").form__button Agregar
+
+    
+include templates/footer.pug

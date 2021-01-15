@@ -1,0 +1,35 @@
+-const tituloWeb = 'Mascotas'
+-const mascotas = arrayMascotas
+include templates/head.pug
+
+body
+    .container
+        if mascotas.length > 0
+            table#table.table
+                caption.table__caption PERRETES
+                thead.table__head
+                    tr.table__row
+                        th.table__header ID
+                        th.table__header NOMBRE
+                        th.table__header DESCRIPCION
+                        th.table__cell ACCION
+                        th.table__cell ACCION 2
+                tbody.table__body
+                    each mascota in mascotas
+                        tr.table__row
+                            td.table__cell= mascota.id
+                            td.table__cell= mascota.name
+                            td.table__cell= mascota.description
+                            td.table__cell
+                                a(href="/mascotas/"+mascota.id) Editar
+                            td.table__cell
+                                button(data-id= mascota.id).button-delete Eliminar
+        else
+            p No hay mascotas.
+        a(href="/mascotas/crear").class Añadir Nueva Mascota
+
+    script(src="/js/scripts.js")
+
+    
+    
+include templates/footer.pug

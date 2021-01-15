@@ -1,0 +1,21 @@
+-const tituloWeb = 'Pagina Detalle'
+-const titulo = 'Detalle de Mascota'
+include templates/head.pug
+
+body
+    h1= titulo
+    if error
+        p= mensaje
+        a(href="/mascotas") Volver a Mascotas
+    else
+
+        form(data-id= mascota.id)#form
+            input(type="text", name="name", value= mascota.name)
+            input(type="text", name="description", value= mascota.description)
+            button Actualizar
+        a(href="/mascotas") Volver a Mascotas
+
+    script(src="/js/scripts2.js")
+
+    
+include templates/footer.pug
