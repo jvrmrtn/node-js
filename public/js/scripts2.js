@@ -1,5 +1,3 @@
-console.log('hola');
-
 const form = document.getElementById('form');
 
 const updatePet = async (id, data) => {
